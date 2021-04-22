@@ -65,10 +65,10 @@ header div {
   display: flex;
   justify-content: space-between;
 }
-header ul {
+.nav-bar {
   display: flex;
 }
-header ul li {
+.nav-bar li {
   font-size: 2rem;
   line-height: 6rem;
   letter-spacing: 1px;
@@ -80,11 +80,11 @@ header ul li {
   font-weight: bold;
   padding-left: 1rem;
 }
-header ul li a {
+.nav-bar li a {
   display: inline-block;
 }
 
-header ul li a:hover{
+.nav-bar li a:hover{
   animation: zoom .5s;
 }
 @keyframes zoom {
@@ -93,7 +93,72 @@ header ul li a:hover{
 	}
 }
 
+/* ハンバーガーボタン */
+.burger-btn{
+  display: none;      
+  width: 6rem;      
+  height: 6rem;      
+  position: relative;      
+  z-index: 3;
+  border:none;
+}    
+.bar{      
+  width: 20px;      
+  height: 1px;        
+  display: block;      
+  position: absolute;      
+  left: 50%;      
+  transform: translateX(-50%);      
+  background-color: #000;    
+}    
+.bar_top{   
+  top: 2rem;
+}
+.bar_mid{    
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.bar_bottom{
+  bottom: 2rem;
+}
+/* ハンバーガーボタン押されたとき */
 
+.burger-btn.active .bar_top{      
+  transform: translate(-50%,10px) rotate(45deg);      
+  transition: all .3s;    
+}    
+.burger-btn.active .bar_mid{      
+  opacity: 0;       
+  transition: opacity .3s;    
+}    
+.burger-btn.active .bar_bottom{      
+transform: translate(-50%,-8px) rotate(-45deg);      
+transition: all .3s;    
+}
+.hamburger-menu.active {
+  position: fixed;
+  top: 6rem;
+  right: 0;
+  z-index: 2;
+  transition: all .3s ease-in;
+}
+
+/* ハンバーガーメニュー */
+.hamburger-menu {
+  width: 100vw;
+  background:#eee;
+  opacity: 0.9;
+  position: absolute;
+  right: -100vw;
+}
+.hamburger-menu ul li {
+  height: 7rem;
+  line-height: 7rem;
+  border-bottom: #333 1px solid;
+}
+.hamburger-menu ul li a {
+  padding-left: 2rem;
+}
 
 /* -------------------------
 TOP
@@ -211,6 +276,7 @@ ABOUT
   padding: 2rem;
   width: 45%;
   font-size: 1.4rem;
+  transition: .5s ease-in-out ;
 }
 .item-title {
   font-size: 2.5rem;
@@ -302,6 +368,13 @@ work-items
 
 
 @media screen and (max-width:600px) { 
+  .nav-bar {
+    display: none;
+  }
+  .burger-btn{
+    display: block;
+  }
+
   #top h1 {
     font-size: 7rem;
     letter-spacing: 5px;
