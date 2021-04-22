@@ -19,13 +19,17 @@
   
   
   <header>
-    
     <div class="wrapper">
       <p class="header-logo">
         <a href="#top">My Works</a>
       </p>
-      <nav class="nav-bar">
-        <ul>
+      <nav class="header-nav">
+        <div class="burger-btn"><!-- ③ハンバーガーボタン -->
+          <span class="bar bar_top"></span>
+          <span class="bar bar_mid"></span>
+          <span class="bar bar_bottom"></span>
+        </div>
+        <ul  class="nav-bar">
           <li><a href="#works">WORKS</a></li>
           <li><a href="#service">SERVICE</a></li>
           <li><a href="#about">ABOUT</a></li>
@@ -33,8 +37,15 @@
         </ul>
       </nav>
     </div>
-
   </header>
+  <nav class="hamburger-menu">
+    <ul>
+      <li><a href="#works">WORKS</a></li>
+      <li><a href="#service">SERVICE</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
   <main>
     <section id="top">
       <div class="wrapper">
@@ -139,7 +150,7 @@
           About
         </h2>
         <div class="about-items">
-          <div class="about-item1">
+          <div class="about-item1 fadein">
             <h3 class="item-title">
               Profile
             </h3>
@@ -158,7 +169,7 @@
               </div>
             </div>
           </div>
-          <div class="about-item2">
+          <div class="about-item2 fadein">
             <h3 class="item-title">
               Skills
             </h3>
@@ -185,6 +196,7 @@
         data-formrun-form="@saaaala--1615521330"
         data-formrun-redirect="true">
       </div>
+  
     </section>
 
   </main>
@@ -193,25 +205,6 @@
 
   </footer>
 
-  <script>
-  $(function() {
-      var hideList = '.w-item:nth-of-type(n+7)';
-      $(hideList).hide();
-      $('.viewmore').click(function() {
-        $(hideList).toggle();
-        if ($(hideList).css('display') == 'none') {
-          $('.viewmore').text('view more');
-        } else {
-          $('.viewmore').text('close');
-        }
-        return false;
-      });
-
-      // var num = $('.w-item').length;
-      // if (num < 6) {
-      //   $('.open-btn').hide();
-      // };
-    });
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
