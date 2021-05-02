@@ -152,6 +152,7 @@ transition: all .3s;
   right: 100vw;
 }
 .hamburger-menu ul li {
+  text-align: center;
   height: 7rem;
   line-height: 7rem;
   border-bottom: #333 1px solid;
